@@ -1,0 +1,27 @@
+{
+    "usuarios":[
+        {
+            "id":1,
+            "nome":"Lucas Silva",
+            "email":"silvalucasldsilva@gmail.com",
+            "senha":"12345678"
+        },
+        {
+            "id":2,
+            "nome":"Gah Guerra",
+            "email":"gahguerra@gmail.com",
+            "senha":"12345678"
+        }
+    ],
+
+    "produtos":[
+        {
+            "id":1,
+            "nome":"Clipes",
+            "descricao":"de papel, tamanho grande",
+            "validade": "2024-12-31",
+            "valor":15.69
+        }
+    ]
+    
+}

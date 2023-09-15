@@ -1,0 +1,27 @@
+{
+    "usuarios":[
+        {
+            "id":1,
+            "nome":"Dani Boy",
+            "email":"dani@boy.com",
+            "senha":"12345678"
+        },
+        {
+            "id":2,
+            "nome":"Pedroza Boy",
+            "email":"pedraza@boy.com",
+            "senha":"123456"
+        }
+    ],
+
+    "produtos":[
+        {
+            "id":1,
+            "nome":"Clipes",
+            "descricai":"de papel, tamanho grande",
+            "validade": "2024-12-31",
+            "valor":15.69
+        }
+    ]
+    
+}
