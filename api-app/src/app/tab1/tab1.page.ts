@@ -11,8 +11,16 @@ export class Tab1Page {
 
   listaUsuarios: Usuario[] = [];
   usuario?: Usuario;
+  id = 0;
 
   constructor(private userService: UsuarioService) {}
 
-}
+  buscarUsuarios(){
+    this.userService.getAll().subscribe(retorno=>
+      {this.listaUsuarios = retorno as Usuario [];
+      console.log(this.listaUsuarios);
+    })
+  }
+
+} 
 
