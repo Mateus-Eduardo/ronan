@@ -9,18 +9,40 @@ import { Usuario } from '../models/Usuario.models';
 })
 export class Tab1Page {
 
+  //Variavel que irá guardar o retorno da API
   listaUsuarios: Usuario[] = [];
   usuario?: Usuario;
   id = 0;
 
-  constructor(private userService: UsuarioService) {}
+  /**
+   * Para consumir a Api devemos instanciar o serviço que foi criado
+   */
+  constructor(private userService: UsuarioService) {
 
-  buscarUsuarios(){
-    this.userService.getAll().subscribe(retorno=>
-      {this.listaUsuarios = retorno as Usuario [];
-      console.log(this.listaUsuarios);
-    })
   }
 
-} 
+  // CRIAR OS MÉTODOS DE TRABALHO
 
+  // Primeiro chamamos o serviço através da sua variavel
+  // Depois chamamos o método que desejamos usar
+  // Utilizamos o subscribe para guardar o retorno da API
+  // Criar uma variavel para guardar o retorno
+  // Enviamos essa variavel para uma função anônima
+  // Dentro da função trabalhamos com o retorno
+  buscarUsuarios(){
+    this.userService.getAll().subscribe(retorno =>{
+      // "as Usuario[]" tenta converter o retorno
+      this.listaUsuarios = retorno as Usuario[];
+      console.log(this.listaUsuarios);
+      this.usuario = undefined; //Limpa o Usuario
+    });
+  }
+
+  buscarPorID(){
+    this.userService.getOne(this.id).subscribe(retorno =>{
+      console.log(retorno);
+      this.usuario = retorno as Usuario;
+      this.listaUsuarios = []; // Limpa a lista
+    })
+  }
+}
